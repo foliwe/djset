@@ -1,9 +1,51 @@
 @import 'bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800');
+@import 'home';
 
-.hero {
-  background: #56CCF2;  /* fallback for old browsers */
-  background-image: linear-gradient(to right, #000000, #3d101c, #770c26, #b30025, #eb1212);
-  height: 100vh;
+
+
+
+
+
+body{
+
+  font-family: 'Open Sans', sans-serif;
+  margin: 0px;
+  margin: 0px;
+  color: #fff;
+    h1,h2,h3,h4,h5{
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+}
+.btn-danger{
+  background-color: #c0392b;
+}
+
+.donate{
+  border-radius: 0px;
+  position: absolute;
+
+  top: 0;
+  right: 0%;
+}
+h1{
+  color: #FFFF00;
+}
+.small_h1{
+  font-size: 16px;
+  font-weight: bold;
+}
+.disc{
+  width: 50px;
+  height: 50px;
+  -webkit-animation: 1s r1 linea infinite;
+  animation:1s r1 linear infinite;
+}
+.hero {  background-image: url(asset_path('club.jpg'));
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
   overflow: hidden;
   position: relative;
    img {
@@ -11,25 +53,45 @@
     height: 100%;
     margin-top: 10px;
 
-}
-}
-.navbar{
-  background: #56CCF2;  /* fallback for old browsers */
-  background-image: linear-gradient(to right, #000000, #3d101c, #770c26, #b30025, #eb1212);
-  // padding-top: 25px;
-  // color: #fff;
-  // border-bottom: red;
+  }
+  .text-deco{
+    color:#D20737;
+  }
+  .text-deco_secondary{
+    color:#00B7FF;
+  }
 }
 
-
+.transparent {
+background: rgba(0,0,0,0.1)
+}
+.inner{
+  background: rgba(0,0,0,0)
+}
 .arrow-down{
   width: 100%;
   margin: 0 auto;
   text-align: center;
-
-
+  z-index: 1;
 }
+.nav-item{
+  padding-right: 10px;
+  a{
+    color: #fff;
+    // background-color: rgba(0, 162, 255, 0.5490196078431373);
+    // border-radius: 10px;
+    font-size: 13px;
 
+  }
+  a.donate_nav{
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0.73);
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 13px;
+
+  }
+}
 .arrow-down::after{
   content:"";
   width: 20px;
@@ -41,6 +103,7 @@
   right:0;
   bottom: 0;
   left: 0;
+  z-index: 9999;
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
   -webkit-transform: rotate(45deg);
@@ -65,3 +128,55 @@
       top: 80px;
     }
   }
+  @keyframes r1{
+    0%{
+      transform:rotate(360deg);
+    }
+
+    100%{
+      transform:rotate(0deg);
+    }
+
+  }
+
+.title{
+  font-size: 150px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.album_info{
+  background: rgba(8, 37, 179, 0.27);
+  width: 70%;
+  margin: 5px auto;
+
+}
+
+.inner_padding{
+  margin-top: 15px;
+}
+.card {
+  background-image: radial-gradient(circle, #870e0e, #680b17, #480d18, #280d12, #000000);
+  border: 1px solid #CF718A;
+  .day{
+    font-size: 40px;
+    font-weight: bold;
+    color: #FEFEDF;
+  }
+}
+
+
+
+
+
+
+@media (min-width: 1280px) {
+  .inner_padding{
+    margin-top: 250px;
+  }
+}
+@media (min-width: 768px) {
+  .inner_padding{
+    margin-top: 60px;
+  }
+}

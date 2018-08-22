@@ -1,19 +1,49 @@
-<div class="hero">
-
-  <div class="arrow-down"></div>
 
 
-  <%=image_tag('dj_hero.png',class:"img-fluid")%>
-</div>
-<div class="section">
 
-</div>
+
+  <%#=image_tag('dj_hero.png',class:"img-fluid")%>
+
+<div class="card add">
+
+  <div class="container p-4">
+
+    <span class="btn btn-danger donate float-right"> DONATE<i class="fab fa-cc-paypal fa-lg"></i></span>
+    <div class="row pt-3">
+      <div class="col">
+        <h5 class="text-center p-4">DATES</h5>
+
+        <div class="d-flex align-items-center p-3 border-bottom border-secondary">
+          <div class=" p-2 border-right border-secondary"><h1>21</h1></div>
+          <div class="pl-3">
+            <h5>June</h5> Some Text <br> some text <br>some txt
+          </div>
+        </div>
+        <div class="d-flex align-items-center p-3 border-bottom border-secondary">
+          <div class=" p-2 border-right border-secondary"><h1>28</h1></div>
+          <div class="pl-3">
+            <h5>June</h5>  Some Text <br> some text <br>some txt
+          </div>
+        </div>
+
+      </div>
+
+        <%= render 'events_list' %>
+
+      <div class="col">
+        <h5 class="text-center p-4">INSTAGRAM</h5>
+
+      </div>
+    </div>
+
+  </div>
 
 
 <script>
+
 $(".arrow-down").click(function() {
  $('html, body').animate({
-     scrollTop: $(".section").offset().top
+     scrollTop: $(".add").offset().top
  }, 2000);
 });
 
