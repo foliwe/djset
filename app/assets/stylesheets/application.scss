@@ -25,6 +25,7 @@ body{
 .donate{
   border-radius: 0px;
   position: absolute;
+  border-top: 0px;
 
   top: 0;
   right: 0%;
@@ -157,13 +158,20 @@ background: rgba(0,0,0,0.1)
 }
 .card {
   background-image: radial-gradient(circle, #870e0e, #680b17, #480d18, #280d12, #000000);
-  border: 1px solid #CF718A;
+  border: 0.5px solid #CF718A;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
   .day{
     font-size: 40px;
     font-weight: bold;
     color: #FEFEDF;
   }
 }
+.card_bg{
+background-image: linear-gradient(to bottom, #7c0066, #89004f, #8e0037, #8c001e, #850000);
+}
+
 
 
 
