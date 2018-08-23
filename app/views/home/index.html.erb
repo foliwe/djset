@@ -3,9 +3,64 @@
 
 
   <%#=image_tag('dj_hero.png',class:"img-fluid")%>
+<div class="container-fluid">
+  <div class="row py-4 add">
+    <div class="col-sm">
+      <h5 class="text-center py-2">Latest Photo</h5>
 
-<div class="card add">
+      <div class="grid">
+        <div class="grid-sizer"></div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+        </div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+        </div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
+        </div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
+        </div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
+        </div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
+        </div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
+        </div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
+        </div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+        </div>
+        <div class="grid-item">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+        </div>
+      </div>
 
+    </div>
+    <div class="col-sm shadow-lg p-3">
+      <h5 class="text-center py-2">Up Comming Event</h5>
+      <div class="d-flex flex-column">
+        <div class="event_image">
+          <h3 class="">EVENT NAME</h3>
+        </div>
+        <div class="">
+          <%= render 'events_list' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <h5 class="text-center py-2">Artist of the month</h5>
+      <%= image_tag('tiku.jpg',class:"img-fluid") %>
+    </div>
+  </div>
+
+<div class="card ">
   <div class="container p-4">
 
     <span class="btn btn-danger donate float-right"> DONATE<i class="fab fa-cc-paypal fa-lg"></i></span>
@@ -27,27 +82,22 @@
         </div>
 
       </div>
-
-        <%= render 'events_list' %>
-
-      <div class="col">
+       <div class="col">
         <h5 class="text-center p-4">INSTAGRAM</h5>
 
       </div>
     </div>
 
   </div>
-
 </div>
-   <div class="card_bg">
-  <div class="container">
+<div class="card_bg">
     <div class="row py-4">
-      <div class="col">
+      <div class="col-sm">
           <h5 class="text-center p-4">ABOUT DJ TAKE AWAY</h5>
 
           <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
-      <div class="col shadow p-3 mb-5">
+      <div class="col-sm shadow p-3 mb-5">
 
             <div class="row">
               <div class="col">
@@ -76,7 +126,7 @@
               </div>
             </div>
       </div>
-      <div class="col">
+      <div class="col-sm">
 
             <div class="py-3">
 
@@ -92,8 +142,11 @@
             </div>
       </div>
     </div>
-  </div>
 </div>
+</div>
+
+
+
 
 <script>
 
@@ -102,5 +155,20 @@ $(".arrow-down").click(function() {
      scrollTop: $(".add").offset().top
  }, 2000);
 });
+
+
+</script>
+
+<script>
+var $grid = $('.grid').masonry({
+  itemSelector: '.grid-item',
+  percentPosition: true,
+  columnWidth: '.grid-sizer'
+});
+// layout Masonry after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry();
+});
+
 
 </script>

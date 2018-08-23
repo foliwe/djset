@@ -43,7 +43,8 @@ h1{
   -webkit-animation: 1s r1 linea infinite;
   animation:1s r1 linear infinite;
 }
-.hero {  background-image: url(asset_path('club.jpg'));
+.hero {
+  background-image: url(asset_path('club.jpg'));
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -152,7 +153,20 @@ background: rgba(0,0,0,0.1)
   margin: 5px auto;
 
 }
+.event_image{
+  background-image: url(asset_path('party.jpeg'));
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  h3{
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 80px;
+  }
+}
+.event_details{
 
+}
 .inner_padding{
   margin-top: 15px;
 }
@@ -168,7 +182,7 @@ background: rgba(0,0,0,0.1)
     color: #FEFEDF;
   }
 }
-.card_bg{
+.card_bg, .add{
 background-image: linear-gradient(to bottom, #7c0066, #89004f, #8e0037, #8c001e, #850000);
 }
 
