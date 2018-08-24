@@ -1,10 +1,13 @@
 @import 'bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800');
 @import 'home';
+@import url('https://fonts.googleapis.com/css?family=Uncial+Antiqua');
 
 
 
-
+$bg_color_gradient: radial-gradient(circle, #060675, #081c88, #092e9b, #0a3fad, #0a51c0);
+$font_color: #d35400;//#00B1E2;
+$font: Uncial Antiqua, cursive;
 
 
 body{
@@ -14,8 +17,11 @@ body{
   margin: 0px;
   color: #fff;
     h1,h2,h3,h4,h5{
-      font-weight: 800;
       text-transform: uppercase;
+      font-family:$font;
+      color:$font_color;
+      text-shadow: 2px 2px 4px #000;
+
     }
 }
 .btn-danger{
@@ -47,7 +53,7 @@ h1{
   background-image: url(asset_path('club.jpg'));
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
    img {
@@ -57,7 +63,7 @@ h1{
 
   }
   .text-deco{
-    color:#D20737;
+    color:$font_color;
   }
   .text-deco_secondary{
     color:#00B7FF;
@@ -170,8 +176,11 @@ background: rgba(0,0,0,0.1)
 .inner_padding{
   margin-top: 15px;
 }
+.bgbg{
+  background-image: $bg_color_gradient;
+}
 .card {
-  background-image: radial-gradient(circle, #870e0e, #680b17, #480d18, #280d12, #000000);
+  background-image: $bg_color_gradient;
   border: 0.5px solid #CF718A;
   border-left: 0px;
   border-right: 0px;
@@ -183,7 +192,8 @@ background: rgba(0,0,0,0.1)
   }
 }
 .card_bg, .add,.footer {
-background-image: linear-gradient(to bottom, #7c0066, #89004f, #8e0037, #8c001e, #850000);
+  background-image: linear-gradient(to top, #060675, #102092, #1538af, #164fcd, #1267eb);
+// background-image: linear-gradient(to right bottom, #1238eb, #1e66f3, #518bf2, #85adeb, #bdcce0);
 }
 
 
@@ -194,7 +204,7 @@ background-image: linear-gradient(to bottom, #7c0066, #89004f, #8e0037, #8c001e,
 
 @media (min-width: 1280px) {
   .inner_padding{
-    margin-top: 250px;
+    margin-top: 205px;
   }
 }
 @media (min-width: 768px) {
