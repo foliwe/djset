@@ -13,7 +13,7 @@
 
   Special Guest : <%= event.special_guest ? event.special_guest: 'None' %> <br> <br>
 <div class="d-flex justify-content-between">
-  <div class=""><%= link_to 'GET TICKET NOW','',class:"btn btn-danger" %></div>
+  <div class=""><%= link_to 'GET TICKET NOW', event.paypal_url(event),class:"btn btn-danger" %></div>
   <div class=""><a href="">All Events</a></div>
 </div>
 
