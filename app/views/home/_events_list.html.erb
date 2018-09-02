@@ -3,15 +3,15 @@
 
 <div class="event_details text-dark">
 
-  <span class="">Nulla commodo vel lorem non dignissim</span> <br>
+  <span class=""><%= event.name %></span> <br>
+  Venue: <%= event.venue.upcase %> <br>
 
-  Venue: PRIMIA CLUB <br>
+  Time : <%= Time.parse(event.start_time.to_s).strftime("%I:%M%p")  %> -
+  <%= Time.parse(event.end_time.to_s).strftime("%I:%M%p")  %> <br>
 
-  Time : 10:00pm-6:00am <br>
+  Address: <%= event.address %> <br>
 
-  Address: LE2PHD, Leicster <br>
-
-  Special Guest : Foliwe Fossung  <br> <br>
+  Special Guest : <%= event.special_guest ? event.special_guest: 'None' %> <br> <br>
 <div class="d-flex justify-content-between">
   <div class=""><%= link_to 'GET TICKET NOW','',class:"btn btn-danger" %></div>
   <div class=""><a href="">All Events</a></div>
