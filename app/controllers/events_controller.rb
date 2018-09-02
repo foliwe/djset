@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_events_params, only: [:destroy, :edit, :update]
 
   def index
-    @events = Events.all
+    @events = Event.all
   end
 
   def new
@@ -30,7 +30,7 @@ class EventsController < ApplicationController
   private
 
   def set_events_params
-    params.require(:event).permit(:name, :address, :time, :venue)
+    params.require(:event).permit(:name, :address, :start_time, :end_time, :venue)
   end
 
 end
