@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 2018_09_02_064932) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "venue"
-    t.datetime "start_time"
     t.text "address"
     t.string "special_guest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "ticket_price"
+    t.datetime "start_time"
     t.datetime "end_time"
   end
 
