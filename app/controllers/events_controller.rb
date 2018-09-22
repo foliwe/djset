@@ -27,6 +27,10 @@ class EventsController < ApplicationController
   def destroy
   end
 
+  def buy
+    TicketMailer.email_ticket.deliver
+  end
+
   private
 
   def set_events_params
