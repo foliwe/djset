@@ -31,19 +31,6 @@ class EventsController < ApplicationController
     TicketMailer.email_ticket.deliver
   end
 
-  def ticket
-    respond_to do |format|
-      # format.html do
-      #   redirect_to '/'
-      # end
-      format.pdf do
-        render pdf: "ticket",
-          template: "home/ticket.html.erb",
-          layout: 'pdf.html'
-      end
-     end
-  end
-
   private
 
   def set_events_params
