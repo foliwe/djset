@@ -55,7 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.1.1'
-gem 'devise', '~> 4.4.3'
+gem 'devise'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'popper_js', '~> 1.12.9'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
