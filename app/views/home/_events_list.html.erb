@@ -3,7 +3,7 @@
 
 <div class="event_details text-dark">
 
-  <span class=""><%= event.name %></span> <br>
+  <span class=""><%= event.name if event.name.present?%></span> <br>
   Venue: <%= event.venue.upcase %> <br>
 
   Time : <%= Time.parse(event.start_time.to_s).strftime("%I:%M%p")  %> -

@@ -7,7 +7,7 @@ validates :address, presence: true
 
 def paypal_url(event)
   values = {
-  :business => "daniel.amah@gmail.com", #test email
+  :business => "djtakeawayint@gmail.com", #test email
   :cmd => '_cart',
   :upload => 1,
   :return => "http://localhost:3000"
