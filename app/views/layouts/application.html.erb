@@ -14,6 +14,11 @@
   <body>
 
     <%= render 'shared/nav'%>
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+        <%= value %>
+      </div>
+    <% end %>
     <%= yield %>
     <div class="footer p-4 text-center">
 

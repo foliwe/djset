@@ -63,3 +63,6 @@ gem 'rails_admin', '~> 1.3'
 gem 'pry'
 gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary'
+gem 'paypal-sdk-rest'
+
+gem 'dotenv-rails', groups: [:development, :test]

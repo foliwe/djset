@@ -15,7 +15,7 @@
   <div class="">
   <%# <%= link_to 'GET TICKET NOW', event.paypal_url(event),class:"btn btn-danger" %>
   </div>
-  <div class=""><%= link_to 'GET TICKET NOW', buyticket_path, class:"btn btn-danger", remote: true %></div>
+  <div class=""><%= link_to 'GET TICKET NOW', buyticket_path(event: event), class:"btn btn-danger" %></div>
   <div class=""><a href="">All Events</a></div>
 </div>
 
