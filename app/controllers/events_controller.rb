@@ -29,8 +29,8 @@ class EventsController < ApplicationController
 
   def buy
     event = Event.find params[:event]
-    @paypal_transaction_success_url = 'https://624adc18.ngrok.io/payment_successful'
-    @Paypal_transaction_cancel_url = 'https://facebook.com'
+    @paypal_transaction_success_url = ENV['APP_URL']+'/payment_successful?event='+event.id.to_s
+    @Paypal_transaction_cancel_url = ENV['APP_URL']+'/payment_successful?event='+event.id.to_s
     @selected_price = event.ticket_price
     if (@payment = new_paypal_service).error.nil?
       payment_no = @payment.id
@@ -52,6 +52,9 @@ class EventsController < ApplicationController
 
     if @payment && @payment.success?
       TicketMailer.email_ticket(@payment.payer.payer_info.email).deliver
+      event = Event.find params[:event]
+      event.sold_count += 1
+      event.save
       message = 'Your ticket has been emailed to your paypal email address.'
     else
       message = 'There was some error processing your payment. Please try again.'
