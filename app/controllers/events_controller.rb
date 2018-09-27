@@ -51,10 +51,10 @@ class EventsController < ApplicationController
     end
 
     if @payment && @payment.success?
-      TicketMailer.email_ticket(@payment.payer.payer_info.email).deliver
       event = Event.find params[:event]
       event.sold_count += 1
       event.save
+      TicketMailer.email_ticket(@payment.payer.payer_info.email, event).deliver
       message = 'Your ticket has been emailed to your paypal email address.'
     else
       message = 'There was some error processing your payment. Please try again.'
