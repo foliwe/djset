@@ -43,4 +43,20 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model Event do
+    edit do
+      field :name
+      field :venue
+      field :address
+      field :special_guest
+      field :ticket_price
+      field :start_time
+      field :end_time
+      field :sold_count do
+        read_only true
+      end
+      field :images, :multiple_carrierwave
+    end
+  end
 end
