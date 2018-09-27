@@ -56,7 +56,10 @@ RailsAdmin.config do |config|
       field :sold_count do
         read_only true
       end
-      field :images, :multiple_carrierwave
+      field :images do
+        partial "my_awesome_partial"
+      end
+      field :ticket_image, :carrierwave
     end
   end
 end

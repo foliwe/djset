@@ -1,0 +1,5 @@
+<%= form.file_field :images, multiple: true %>
+<% @object.images.each_with_index do |user, index| %>
+  <%= image_tag user.to_s, style: 'width: 100px !important; height: auto' %>
+  <%# <a class="btn btn-info btn-remove-image" data-confirm="Are you sure you want to delete this image?" rel="nofollow" data-method="delete" href="/user/<%= @object.id %>/images/<%= index %>">Delete</a> %>
+<% end %>

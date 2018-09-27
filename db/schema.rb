@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(version: 2018_09_26_201033) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer "sold_count", default: 0
-    t.string "images", default: [], array: true
+    t.text "images"
+    t.string "ticket_image"
   end
 
   create_table "users", force: :cascade do |t|

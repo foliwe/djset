@@ -6,11 +6,14 @@ class Event < ApplicationRecord
   validates :address, presence: true
 
   mount_uploaders :images, EventImageUploader
+  mount_uploader  :ticket_image, EventImageUploader
 
-  attr_accessor :delete_assets
+  serialize :images, JSON
+
+  attr_accessor :delete_images
   after_validation do
     uploaders = images.delete_if do |uploader|
-      if Array(delete_assets).include?(uploader.file.identifier)
+      if Array(delete_images).include?(uploader.file.identifier)
         uploader.remove!
         true
       end
@@ -18,7 +21,7 @@ class Event < ApplicationRecord
     write_attribute(:images, uploaders.map { |uploader| uploader.file.identifier })
   end
 
-  def event_images=(files)
+  def images=(files)
     appended = files.map do |file|
       uploader = _mounter(:images).blank_uploader
       uploader.cache! file
