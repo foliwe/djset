@@ -26,8 +26,7 @@
     position: relative;
     height: 280px;
     width: 100%;
-    /* background-image: url(https://htmlpdfapi.com/uploads/images/568b96887261690f6dbe0000/content_background-concert-3.jpg?1451988615); */
-    background-image: url(#{@event.ticket_image.to_s});
+    background-image: url(<%= @event.ticket_image.url %>);
     background-repeat: no-repeat;
     overflow: hidden;
   }
@@ -36,7 +35,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     float: left;
-    width: 635px;
+    width: 795px;
     padding: 35px 0 0 60px;
   }
   section .right {
@@ -47,20 +46,22 @@
   section .event {
     margin-bottom: 40px;
     font-weight: 700;
-    font-size: 1.6em;
+    font-size: 3vw;
     line-height: 35px;
     text-transform: uppercase;
   }
   section .title {
-    margin-bottom: 35px;
     color: #F5A623;
     font-family: "Audiowide", cursive;
-    font-size: 4em;
+    font-size: 150%;
     line-height: 72px;
+    max-height: 72px;
   }
   section .info {
-    font-size: 0.8em;
+    text-align: right;
+    font-size: 3vw;
     text-transform: uppercase;
+    margin-right: 45px;
   }
   section .seats {
     margin-bottom: 35px;
@@ -89,15 +90,21 @@
   <div class="container">
     <section>
       <div class="left">
-        <div class="event">Live in concert</div>
-        <div class="title">Joe Doe</div>
-        <div class="info">Saturday // August 25 2020 // The Plaza // New York</div>
+        <div class="event">
+          <%= @event.start_time.strftime('%B %d %Y') %>
+        </div>
+        <div class="title">
+          <%= @event.name %>
+        </div>
+        <div class="info">
+          Venue: <%= @event.venue %>
+        </div>
       </div>
-      <div class="right">
+      <%# <div class="right">
         <div class="seats">section<span>A</span></div>
         <div class="seats">row<span>13</span></div>
         <div class="seats">seat<span>120</span></div>
-      </div>
+      </div> %>
     </section>
   </div>
 </body>

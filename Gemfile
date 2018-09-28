@@ -69,3 +69,4 @@ gem 'wkhtmltopdf-binary'
 gem 'paypal-sdk-rest'
 
 gem 'dotenv-rails', groups: [:development, :test]
+gem "letter_opener", group: :development

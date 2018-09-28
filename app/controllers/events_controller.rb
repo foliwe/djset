@@ -27,6 +27,20 @@ class EventsController < ApplicationController
   def destroy
   end
 
+  def destroy_image
+    puts "======= " * 500
+    puts params.inspect
+    @event = Event.find(params[:event_id].to_i)
+    remove_image_at_index(params[:image_id].to_i)
+    if @event.save
+        flash[:success] = "delete successfull"
+        redirect_to('/admin/event/'+@event.id.to_s+'/edit')
+    else
+        flash.now[:danger] = "sorry can't delete the photo"
+        render("show")
+    end
+  end
+
   def buy
     event = Event.find params[:event]
     @paypal_transaction_success_url = ENV['APP_URL']+'/payment_successful?event='+event.id.to_s
@@ -39,6 +53,10 @@ class EventsController < ApplicationController
       redirect_to @redirect_url
     else
       @message = @payment.error
+      render(
+        html: ("<script>alert('"+@message.to_s+"')</script>").html_safe,
+        layout: 'application'
+      )
     end
   end
 
@@ -81,6 +99,19 @@ class EventsController < ApplicationController
 
   def execute_paypal_payment(params)
     PaypalService.execute_payment(params[:payment_id], params[:payer_id])
+  end
+
+  private
+
+  def remove_image_at_index(index)
+    remain_images = @event.images
+    if index == 0 && @event.images.size == 1
+        @event.remove_images!
+    else
+        deleted_image = remain_images.delete_at(index)
+        deleted_image.try(:remove!)
+        @event.images = remain_images
+    end
   end
 
 end
