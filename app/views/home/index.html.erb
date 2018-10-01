@@ -42,6 +42,8 @@
       </div>
 
     </div>
+
+    <%if Event.any?%>
     <div class="col-sm shadow-lg p-3 bg-white">
       <h5 class="text-center py-2">Up Comming Event</h5>
       <div class="d-flex flex-column">
@@ -53,6 +55,22 @@
         </div>
       </div>
     </div>
+
+    <%else%>
+
+    <div class="col-sm shadow-lg p-3 bg-white">
+      <h5 class="text-center py-2">Sorry No Current Event</h5>
+      <div class="d-flex flex-column">
+        <div class="event_image">
+          <h3 class=""></h3>
+        </div>
+        <div class="p-4">
+          <h5>Coming Soon</h5>
+        </div>
+      </div>
+    </div>
+
+    <%end%>
     <div class="col-sm">
       <h5 class="text-center py-2">Artist of the month</h5>
       <%= image_tag('tiku.jpg',class:"img-fluid") %>
