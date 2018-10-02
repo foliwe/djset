@@ -10,15 +10,31 @@ class Event < ApplicationRecord
 
   serialize :images, JSON
 
-  attr_accessor :delete_images
-  after_validation do
-    uploaders = images.delete_if do |uploader|
-      if Array(delete_images).include?(uploader.file.identifier)
-        uploader.remove!
-        true
-      end
+  # attr_accessor :remove_image
+
+  # after_validation do
+  #   uploaders = images.delete_if do |uploader|
+  #     puts "======================== \n" * 15
+  #     puts uploader.file.identifier
+  #     if Array(delete_images).include?(uploader.file.identifier)
+  #       uploader.remove!
+  #       true
+  #     end
+  #   end
+  #   write_attribute(:images, uploaders.map { |uploader| uploader.file.identifier })
+  # end
+
+  def delete_image(image_file)
+    image_to_delete = self.images.select do |image| # find the image based on file name
+      image.file.filename == image_file
     end
-    write_attribute(:images, uploaders.map { |uploader| uploader.file.identifier })
+    if image_to_delete && image_to_delete[0] # delete the image that was found
+      self.images = self.images - [image_to_delete[0]]
+      if self.images.empty? && read_attribute(:images).size == 1 # update the internal attribute
+        write_attribute(:images, [])
+      end
+      image_to_delete[0].remove! # delete from the file system # save the updated images attribute
+    end
   end
 
   def images=(files)
