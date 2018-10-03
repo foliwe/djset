@@ -28,10 +28,9 @@ class EventsController < ApplicationController
   end
 
   def destroy_image
-    puts "======= " * 500
-    puts params.inspect
     @event = Event.find(params[:event_id].to_i)
-    remove_image_at_index(params[:image_id].to_i)
+    # @event.delete_image(params[:image_name])
+    # remove_image_at_index(params[:image_id].to_i)
     if @event.save
         flash[:success] = "delete successfull"
         redirect_to('/admin/event/'+@event.id.to_s+'/edit')
@@ -43,8 +42,8 @@ class EventsController < ApplicationController
 
   def buy
     event = Event.find params[:event]
-    @paypal_transaction_success_url = ENV['APP_URL']+'/payment_successful?event='+event.id.to_s
-    @Paypal_transaction_cancel_url = ENV['APP_URL']+'/payment_successful?event='+event.id.to_s
+    @paypal_transaction_success_url = ENV['APP_URL']+'payment_successful?event='+event.id.to_s
+    @Paypal_transaction_cancel_url = ENV['APP_URL']+'payment_successful?event='+event.id.to_s
     @selected_price = event.ticket_price
     if (@payment = new_paypal_service).error.nil?
       payment_no = @payment.id
@@ -78,7 +77,15 @@ class EventsController < ApplicationController
       message = 'There was some error processing your payment. Please try again.'
     end
     render(
-      html: ("<script>alert('"+message+"')</script>").html_safe,
+      html: ("<script>
+        alert('"+message+"');
+        my_close()
+
+        function my_close(){
+          window.location = '#{ENV['APP_URL']}';
+        }
+        </script>
+        ").html_safe,
       layout: 'application'
     )
   end
