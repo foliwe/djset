@@ -2,12 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800');
 @import 'home';
 @import url('https://fonts.googleapis.com/css?family=Uncial+Antiqua');
+@import 'lightbox';
 
 
 
 $bg_color_gradient: radial-gradient(circle, #060675, #081c88, #092e9b, #0a3fad, #0a51c0);
-$font_color: #d35400;//#00B1E2;
-$font: Uncial Antiqua, cursive;
+$color: #452508;
+$color_1: #f9e0ca;
+$color_2: #f6ceab;
+$red_color: #f09188;
 
 
 body{
@@ -15,17 +18,55 @@ body{
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
   margin: 0px;
-  color: #fff;
-    h1,h2,h3,h4,h5{
-      text-transform: uppercase;
-      font-family:$font;
-      color:$font_color;
-      text-shadow: 2px 2px 4px #000;
+  font-size: 18px;
+  font-weight: 300;
+  color: $color;
+  }
+  h1,h2,h3,h4,h5{
+    text-transform: uppercase;
+  }
+  .bold{
+    font-weight:bold;
+    color: #552d0a;
+  }
 
-    }
+  h2{
+    font-size: 110%;
+    word-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  h2:after{
+    content: " ";
+    display: block;
+    height: 2px;
+    margin-top: 3px;
+    background-color: $color_1;
+    width: 100px;
+
+
+  }
+    /*---navbar------------------*/
+    .nav-item{
+      padding-right: 10px;
+      a{
+        color: $color;
+        // background-color: rgba(0, 162, 255, 0.5490196078431373);
+        // border-radius: 10px;
+        font-size: 13px;
+
 }
+}
+.transparent {
+  background: rgba(0,0,0,0.1)
+}
+
+/*Buttons*/
+
 .btn-danger{
-  background-color: #c0392b;
+  background-color: #ee8478;
+  font-size: 80%;
 }
 
 .donate{
@@ -36,23 +77,58 @@ body{
   top: 0;
   right: 0%;
 }
-h1{
-  color: #FFFF00;
-}
-.small_h1{
-  font-size: 16px;
-  font-weight: bold;
-}
-.disc{
+
+.date{
+  position: absolute;
   width: 50px;
-  height: 50px;
-  -webkit-animation: 1s r1 linea infinite;
-  animation:1s r1 linear infinite;
+  height: 90px;
+  background-color: #fff;
+  left: 20px;
+  bottom: -2px;
+  border-bottom: 4px solid $color_1;
+  display:block;
+  padding: 8px;
+  font-size: 80%;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  background-color: $red_color;
+  color: #fff;
+  span.day{
+    font-size: 140%;
+    font-weight: bold;
+  }
+  span.month{
+    font-size: 80%;
+  }
+  span.year{
+    font-size: 90%;
+
+  }
 }
+
+.activities{
+  padding: 10px 50px;
+}
+
+.social{
+  display: flex;
+  justify-content: space-between;
+}
+.social_icons{
+  align-self: center;
+  padding-right: 20px;
+i{
+  font-size: 200%;
+}
+}
+/*-------------------------*/
+/*---Hero------------------*/
+
 .hero {
-  background-image: url(asset_path('club.jpg'));
+  background-image: url(asset_path('hero_dj.jpg'));
   background-size: cover;
-  background-position: center;
+  background-position: top;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -62,43 +138,42 @@ h1{
     margin-top: 10px;
 
   }
-  .text-deco{
-    color:$font_color;
+
+}
+.intro{
+  display:flex;
+  justify-content:flex-end;
+  position: absolute;
+  top: 30%;
+  right: -20%;
+  transform: translate(-50%, -50%);
+  padding:0 50px;
+  font-stretch: 20px;
+  text-align: center;
+
+  .intro_div_2{
+    align-self: center;
+    padding-left: 30px;
+    font-size: 140%;
+    font-weight: 400;
+    border-left: 1px solid $color;
   }
-  .text-deco_secondary{
-    color:#00B7FF;
-  }
+
 }
 
-.transparent {
-background: rgba(0,0,0,0.1)
+.dj_font{
+  font-size: 1000%;
+  font-family: 'Titan One', cursive;
+
 }
-.inner{
-  background: rgba(0,0,0,0)
-}
+
+/*---ARROW------------------*/
+
 .arrow-down{
   width: 100%;
   margin: 0 auto;
   text-align: center;
   z-index: 1;
-}
-.nav-item{
-  padding-right: 10px;
-  a{
-    color: #fff;
-    // background-color: rgba(0, 162, 255, 0.5490196078431373);
-    // border-radius: 10px;
-    font-size: 13px;
-
-  }
-  a.donate_nav{
-    color: #fff;
-    background-color: rgba(255, 0, 0, 0.73);
-    font-weight: bold;
-    border-radius: 10px;
-    font-size: 13px;
-
-  }
 }
 .arrow-down::after{
   content:"";
@@ -112,103 +187,55 @@ background: rgba(0,0,0,0.1)
   bottom: 0;
   left: 0;
   z-index: 9999;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-right: 2px solid $color;
+  border-bottom: 2px solid $color;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   -webkit-animation: 2s arrow infinite ease;
   animation: 2s arrow infiite ease;
 }
 
-  @-webkit-keyframes arrow{
-    0%, 100%{
-      top: 50px;
-    }
-    50%{
-      top: 80px;
-    }
+@-webkit-keyframes arrow{
+  0%, 100%{
+    top: 50px;
   }
-  @keyframes arrow{
-    0%, 100%{
-      top: 50px;
-    }
-    50%{
-      top: 80px;
-    }
+  50%{
+    top: 80px;
   }
-  @keyframes r1{
-    0%{
-      transform:rotate(360deg);
-    }
-
-    100%{
-      transform:rotate(0deg);
-    }
-
+}
+@keyframes arrow{
+  0%, 100%{
+    top: 50px;
+  }
+  50%{
+    top: 80px;
+  }
+}
+@keyframes r1{
+  0%{
+    transform:rotate(360deg);
   }
 
-.title{
-  font-size: 150px;
-  text-transform: uppercase;
-  font-weight: 800;
+  100%{
+    transform:rotate(0deg);
+  }
+
 }
 
-.album_info{
-  background: rgba(8, 37, 179, 0.27);
-  width: 70%;
-  margin: 5px auto;
+
+a.donate_nav{
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.73);
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 13px;
 
 }
+
 .event_image{
   background-image: url(asset_path('party.jpeg'));
   background-size: cover;
   background-position: center;
   height: 200px;
-  h3{
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 80px;
-  }
-}
-.event_details{
-
-}
-.inner_padding{
-  margin-top: 15px;
-}
-.bgbg{
-  background-image: $bg_color_gradient;
-}
-.card {
-  background-image: $bg_color_gradient;
-  border: 0.5px solid #CF718A;
-  border-left: 0px;
-  border-right: 0px;
-  border-radius: 0px;
-  .day{
-    font-size: 40px;
-    font-weight: bold;
-    color: #FEFEDF;
-  }
-}
-.card_bg, .add,.footer {
-  background-image: linear-gradient(to top, #060675, #102092, #1538af, #164fcd, #1267eb);
-// background-image: linear-gradient(to right bottom, #1238eb, #1e66f3, #518bf2, #85adeb, #bdcce0);
-}
-
-
-
-
-
-
-
-@media (min-width: 1280px) {
-  .inner_padding{
-    margin-top: 205px;
-  }
-}
-@media (min-width: 768px) {
-  .inner_padding{
-    margin-top: 60px;
-  }
+  position: relative;
 }

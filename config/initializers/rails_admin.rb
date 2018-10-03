@@ -60,6 +60,7 @@ RailsAdmin.config do |config|
         partial "my_awesome_partial"
       end
       field :ticket_image, :carrierwave
+      field :poster_image, :carrierwave
     end
   end
 end

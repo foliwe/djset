@@ -14,5 +14,6 @@
 //= require jquery
 //= require popper
 //= require bootstrap
+//= require lightbox
 //= require activestorage
 //= require_tree .

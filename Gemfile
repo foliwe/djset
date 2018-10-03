@@ -67,6 +67,6 @@ gem 'pry'
 gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary'
 gem 'paypal-sdk-rest'
-
+gem 'lightbox2-rails'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "letter_opener", group: :development

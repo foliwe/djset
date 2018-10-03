@@ -1,83 +1,143 @@
 
+ <section class="hero">
 
+  <div class="arrow-down"></div>
 
-  <%#=image_tag('dj_hero.png',class:"img-fluid")%>
-<div class="container-fluid">
-  <div class="row py-4 add">
-    <div class="col-sm">
-      <h5 class="text-center py-2">Latest Photo</h5>
+  <div class="intro">
 
-      <div class="grid">
-        <div class="grid-sizer"></div>
-        <div class="grid-item">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
-        </div>
-        <div class="grid-item">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
-        </div>
-        <div class="grid-item">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
-        </div>
-        <div class="grid-item">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
-        </div>
-        <div class="grid-item">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
-        </div>
-        <div class="grid-item">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
-        </div>
-        <div class="grid-item">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
-        </div>
-        <div class="grid-item">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
-        </div>
-        <div class="grid-item">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
-        </div>
-        <div class="grid-item">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
-        </div>
-      </div>
+    <div class="intro_div_1">
 
+      <h1 class="dj_font">D<span>J</span></h1>
+
+      <h4>Take Away </h4><h5 class="bold">International LTD</h5>
     </div>
-
-    <%if @event.present? %>
-    <div class="col-sm shadow-lg p-3 bg-white">
-      <h5 class="text-center py-2">Up Comming Event</h5>
-      <div class="d-flex flex-column">
-        <div class="event_image">
-          <h3 class=""><%= @event.name %></h3>
-        </div>
-        <div class="">
-          <%= render 'events_list', event: @event %>
-        </div>
-      </div>
-    </div>
-
-    <%else%>
-
-    <div class="col-sm shadow-lg p-3 bg-white">
-      <h5 class="text-center py-2">Sorry No Current Event</h5>
-      <div class="d-flex flex-column">
-        <div class="event_image">
-          <h3 class=""></h3>
-        </div>
-        <div class="p-4">
-          <h5>Coming Soon</h5>
-        </div>
-      </div>
-    </div>
-
-    <%end%>
-    <div class="col-sm">
-      <h5 class="text-center py-2">Artist of the month</h5>
-      <%= image_tag('tiku.jpg',class:"img-fluid") %>
+    <div class="intro_div_2">
+      SINGER <br>
+      COMPOSER <br>
+      DJ
     </div>
   </div>
+ </section>
 
-</div>
+  <div class="container-fluid">
+
+    <div class="social">
+      <div class=""><h2>Activities</h2></div>
+      <div class="social_icons"><i class="fab fa-facebook-square"></i> <i class="fab fa-youtube-square"></i> <i class="fab fa-instagram"></i> <i class="fab fa-snapchat-square"></i></div>
+    </div>
+
+  </div>
+  <section class="activities">
+    <div class="container-fluid">
+    <div class="row py-4 add">
+      <div class="col-sm-5">
+        <h2>Latest Photo</h2>
+
+        <div class="grid">
+          <div class="grid-sizer"></div>
+
+          <div class="grid-item">
+            <%=link_to image_tag('dj_image_1.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to image_tag('dj_image_2.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to image_tag('dj_image_3.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to image_tag('dj_image_4.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to image_tag('dj_image_5.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to do %>
+
+            <%=image_tag('dj_image_6.jpg',data: {lightbox: 'test'})%>
+
+            <%end%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to image_tag('dj_trophy.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to image_tag('dj_image_8.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to image_tag('dj_image_9.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to image_tag('dj_image_10.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+          <div class="grid-item">
+            <%=link_to image_tag('dj_image_7.jpg',data: {lightbox: 'test'})%>
+
+          </div>
+        </div>
+
+      </div>
+
+      <%if @event.present? %>
+      <div class="col-sm ">
+        <h2>Up Comming Event</h2>
+        <div class="d-flex flex-column">
+          <div class="event_image">
+            <div class="date">
+              <span class="day">
+                <%=@event.start_time.strftime('%d')%>
+              </span>
+              <span class="month">
+                <%=@event.start_time.strftime('%^b')%>
+              </span>
+              <span class="year">
+                <%=@event.start_time.strftime('%Y')%>
+              </span>
+            </div>
+
+            <h3 class=""><%= @event.name %></h3>
+          </div>
+          <div class="">
+            <%= render 'events_list', event: @event %>
+          </div>
+        </div>
+      </div>
+
+      <%else%>
+
+      <div class="col-sm shadow-lg p-3 bg-white">
+        <h2>Sorry No Current Event</h2>
+        <div class="d-flex flex-column">
+          <div class="event_image">
+            <h3 class=""></h3>
+          </div>
+          <div class="p-4">
+            <h5>Coming Soon</h5>
+          </div>
+        </div>
+      </div>
+
+      <%end%>
+      <div class="col-sm">
+        <h2>Artist of the month</h2>
+        <%= image_tag('tiku.jpg',class:"img-fluid") %>
+      </div>
+    </div>
+
+  </div>
+  </section>
+
+
 
 <div class="card ">
   <div class="container-fluid p-4">

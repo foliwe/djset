@@ -7,6 +7,7 @@ class Event < ApplicationRecord
 
   mount_uploaders :images, EventImageUploader
   mount_uploader  :ticket_image, EventImageUploader
+  mount_uploader  :poster_image, EventImageUploader
 
   serialize :images, JSON
 
