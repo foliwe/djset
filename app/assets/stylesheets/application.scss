@@ -129,7 +129,7 @@ i{
   background-image: url(asset_path('hero_dj.jpg'));
   background-size: cover;
   background-position: top;
-  height: 100vh;
+  height: 85vh;
   overflow: hidden;
   position: relative;
    img {
@@ -239,3 +239,27 @@ a.donate_nav{
   height: 200px;
   position: relative;
 }
+
+@include media-breakpoint-up(lg) {
+  .intro{
+    display:flex;
+    justify-content:flex-end;
+    position: absolute;
+    top: 30%;
+    right: -10%;
+    transform: translate(-50%, -50%);
+    padding:0 50px;
+    font-stretch: 20px;
+    text-align: center;
+
+    .intro_div_2{
+      align-self: center;
+      padding-left: 30px;
+      font-size: 140%;
+      font-weight: 400;
+      border-left: 1px solid $color;
+    }
+
+  }
+
+ }
